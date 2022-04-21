@@ -1,0 +1,26 @@
+body {
+  font-family:'Courier New';
+  background: url("backgroud.jpg");
+  background-size: 2560px;
+  overflow-x: hidden;
+}
+
+.flex {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+}
+
+.pad {
+  margin: 10px 50px;
+}
+
+.obrazek {
+  margin: 10px;
+}
+
+@media (max-width: 600px) {
+  .flex {
+    justify-content: center;
+  }
+}
