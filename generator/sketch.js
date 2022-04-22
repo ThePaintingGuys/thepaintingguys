@@ -1,14 +1,26 @@
-function setup() {
+const button = document.getElementById('btn');
+const number = document.getElementById('num');
+const start = document.getElementById('st');
+
+button.addEventListener('click', () => {
+  console.log(` jsi kokot n ${number.value} s ${start.value}`)
+  generate(number.value, start.value);
+});
+
+function setup() {}
+
+function draw() {}
+
+function generate(n, strt) {
   createCanvas(8, 8);
-  for (let i = 0; i < 10; i++) {
-    colorMode(HSB, 360, 100, 100, 1);
+  colorMode(HSB, 360, 100, 100, 1);
+
+  for (let i = 0; i < n; i++) {
 
     let shirtColor = color(random(0, 360), 100, 100);
     let skinColor = color(30, random(0, 100), 100);
     let hairColor = color(30, random(0, 100), 100);
     let bgColor = color(200, random(0, 100), 100);
-  
-    background(bgColor);
   
     let img = createImage(8, 8);
     img.loadPixels();
@@ -99,10 +111,7 @@ function setup() {
   
     img.updatePixels();
     image(img, 0, 0, 8, 8);
-    img.save(`paintingguy${i}`, 'jpg');
+    let n = i + Number(strt)
+    img.save(`paintingguy${n}`, 'jpg');
   }
-}
-
-function draw() {
-
 }
